@@ -1,11 +1,13 @@
-import { View, Text } from "react-native"
+import { View, Text, TouchableOpacity } from "react-native"
 import { myStyle } from "../styles/myStyle"
 
 //use props or specific variable
-export default function Kon(props){
+export default function Kon({item, deleteData}){
     return(
-        <View style={myStyle.content}>
-            <Text style={myStyle.header}>Name {props.name} , Age {props.age}  </Text>
+        <TouchableOpacity onPress={()=>deleteData(item.id)}>
+            <View style={myStyle.content}>
+            <Text style={myStyle.header}>Name {item.name} , Age {item.age}y  </Text>
         </View>
+        </TouchableOpacity>
     )
 }
