@@ -1,7 +1,8 @@
 import { View, Text, Image, Button, Alert, FlatList } from "react-native";
 import { useState } from "react";
-
+//components
 import Kon from "./components/Kon";
+import AddForm from "./components/AddForm";
 //import from file
 import { myStyle } from "./styles/myStyle";
 
@@ -21,6 +22,19 @@ export default function App() {
     })
   }
 
+  const insertData=(name,age)=>{
+    if(name){
+      setData((prevData)=>{
+        return[
+          {id:Math.random().toString(),name,age},
+          ...prevData
+        ]
+      })
+    }else{
+      Alert.alert("fill you population form")
+    }
+  }
+
   return (
     <View style={myStyle.container}>
         <FlatList
@@ -33,6 +47,7 @@ export default function App() {
         style={{alignSelf:"center",fontSize:30,fontWeight:"bold"}}>population data</Text>}
         ListEmptyComponent={<Text style={{alignSelf:"center",fontSize:18}}>data not found</Text>}
         />
+        <AddForm insertData={insertData}/>
     </View>
   );
 }

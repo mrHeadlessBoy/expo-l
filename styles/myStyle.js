@@ -15,5 +15,14 @@ export const myStyle = StyleSheet.create({
     borderColor: "black",
     borderStyle: "dashed",
     borderRadius: 10,
+    flexDirection: "row",
+    justifyContent:"space-between"
   },
+  input:{
+    borderBottomColor:"#ddd",
+    borderBottomWidth:1,
+    paddingHorizontal:8,
+    paddingVertical:6,
+    marginBottom:15
+  }
 });
